@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="microservice-uml-3-actors" name="UML Use-Case Diagram">
+    <mxGraphModel dx="1460" dy="806" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=0;strokeWidth=1.5;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;" value="Internal Microservice Catalog &amp;amp; Health Portal" vertex="1">
+          <mxGeometry height="570" width="850" x="230" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="devops" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="DevOps Engineer" vertex="1">
+          <mxGeometry height="150" width="110" x="35" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="architect" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="System Architect" vertex="1">
+          <mxGeometry height="150" width="110" x="1120" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="microservice" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Monitored Microservice" vertex="1">
+          <mxGeometry height="150" width="130" x="35" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;" value="UC-01&lt;br&gt;Monitor Microservice Health" vertex="1">
+          <mxGeometry height="80" width="210" x="400" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ping" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;" value="Ping Health Endpoint" vertex="1">
+          <mxGeometry height="65" width="170" x="425" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;" value="UC-04&lt;br&gt;Receive Downtime Alert" vertex="1">
+          <mxGeometry height="80" width="210" x="700" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;" value="UC-02&lt;br&gt;View Dependency Graph" vertex="1">
+          <mxGeometry height="80" width="210" x="270" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;" value="UC-03&lt;br&gt;View API Documentation" vertex="1">
+          <mxGeometry height="80" width="210" x="700" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" parent="1" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;" value="UC-05&lt;br&gt;View Microservice Details" vertex="1">
+          <mxGeometry height="80" width="240" x="475" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="devops" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="devops" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="devops" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="uc5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="devops" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="architect" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="architect" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="architect" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="uc5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="microservice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="ping">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="include1" edge="1" parent="1" source="uc1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=block;endFill=0;" target="ping" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="extend1" edge="1" parent="1" source="uc4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=open;endFill=0;" target="uc1" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
