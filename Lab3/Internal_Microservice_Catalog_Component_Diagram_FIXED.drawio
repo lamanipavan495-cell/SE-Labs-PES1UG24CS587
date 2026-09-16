@@ -1,0 +1,144 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="internal-microservice-catalog" name="Lab 3 Component Diagram">
+    <mxGraphModel dx="1703" dy="940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontSize=22;fontStyle=1;fontColor=#1f4e79;" value="UML Component Diagram — Internal Microservice Catalog &amp;amp; Health Portal" vertex="1">
+          <mxGeometry height="35" width="760" x="480" y="15" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontSize=12;fontStyle=2;fontColor=#667085;" value="Selected architecture: Microservices | Problem Statement #42 | Pavan R Lamani, PES1UG24CS587" vertex="1">
+          <mxGeometry height="25" width="680" x="520" y="48" as="geometry" />
+        </mxCell>
+        <mxCell id="portal" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#3155e7;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Internal Portal&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;UI / presentation layer&lt;/font&gt;" vertex="1">
+          <mxGeometry height="90" width="300" x="710" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#00a878;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Authentication &amp;amp;&lt;br&gt;Authorization Service&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;NFR-002&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="225" x="275" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="catalog" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#3155e7;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Service Catalog&lt;br&gt;Service&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;FR-005&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="225" x="530" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="dependency" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#3155e7;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Dependency Graph&lt;br&gt;Service&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;FR-002 · NFR-001&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="225" x="785" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="docs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#3155e7;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;API Documentation&lt;br&gt;Service&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;FR-003&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="225" x="1040" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="health" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#3155e7;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Health Monitoring&lt;br&gt;Service&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;FR-001&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="225" x="1295" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#7b3ff2;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Portal Database&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;registry, deps, health history&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="300" x="760" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="alert" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;align=center;verticalAlign=middle;fontSize=14;strokeColor=#e31b23;" value="&lt;b&gt;«component»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Alert &amp;amp; Notification&lt;br&gt;Service&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;FR-004&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="225" x="1160" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="monitored" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeWidth=2;strokeColor=#6b7280;align=center;verticalAlign=middle;fontSize=14;" value="&lt;b&gt;«external»&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Monitored Microservice&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#667085&quot;&gt;health endpoint owner&lt;/font&gt;" vertex="1">
+          <mxGeometry height="85" width="250" x="1425" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_top" parent="1" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;" value="DevOps Engineer /&lt;br&gt;System Architect" vertex="1">
+          <mxGeometry height="100" width="80" x="90" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_devops" parent="1" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;" value="DevOps Engineer" vertex="1">
+          <mxGeometry height="100" width="80" x="1130" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_arch" parent="1" style="shape=umlActor;html=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;fontSize=12;" value="System Architect" vertex="1">
+          <mxGeometry height="100" width="80" x="1385" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="ui_edge" edge="1" parent="1" source="actor_top" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;dashed=1;" target="portal" value="HTTPS (UI)">
+          <mxGeometry height="60" width="120" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="145" />
+              <mxPoint x="440" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_auth" edge="1" parent="1" source="portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="auth" value="Authentication API">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_cat" edge="1" parent="1" source="portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="catalog" value="Catalog API">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_dep" edge="1" parent="1" source="portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="dependency" value="Dependency Graph API">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_docs" edge="1" parent="1" source="portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="docs" value="API Documentation API">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_health" edge="1" parent="1" source="portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="health" value="Health Status API">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_catdb" edge="1" parent="1" source="catalog" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="db" value="Database Queries">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_depdb" edge="1" parent="1" source="dependency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="db" value="Database Queries">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_docsdb" edge="1" parent="1" source="docs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="db" value="Database Queries">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_healthdb" edge="1" parent="1" source="health" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="db" value="Database Queries">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_notify" edge="1" parent="1" source="health" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="alert" value="Notification API">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_probe" edge="1" parent="1" source="health" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;" target="monitored" value="Health Probe / HTTP">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_alert_dev" edge="1" parent="1" source="alert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;dashed=1;strokeColor=#e31b23;fontColor=#e31b23;" target="actor_devops" value="Downtime Alert (after 3 failed probes)">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="e_alert_arch" edge="1" parent="1" source="alert" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;dashed=1;strokeColor=#e31b23;fontColor=#e31b23;" target="actor_arch" value="">
+          <mxGeometry height="60" width="120" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_auth" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#00a878;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="365" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_cat" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="620" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_dep" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="875" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_docs" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1130" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_health" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1385" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="socket_cat" parent="1" style="shape=arc;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="615" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="socket_dep" parent="1" style="shape=arc;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="870" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="socket_docs" parent="1" style="shape=arc;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="1125" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="socket_health" parent="1" style="shape=arc;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="1380" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_db" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="905" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_alert" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1255" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="socket_alert" parent="1" style="shape=arc;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=white;strokeColor=#e31b23;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="1340" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="socket_probe" parent="1" style="shape=arc;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="18" width="18" x="1515" y="345" as="geometry" />
+        </mxCell>
+        <mxCell id="ball_mon" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=2;fillColor=white;strokeColor=#3155e7;" value="" vertex="1">
+          <mxGeometry height="16" width="16" x="1515" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_not_line" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9ca3af;strokeWidth=1.5;dashed=1;strokeColor=#e31b23;fontColor=#e31b23;" value="">
+          <mxGeometry height="1" width="28" x="300" y="780" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
