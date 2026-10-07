@@ -14,15 +14,22 @@ class GameEngine:
     def __init__(self):
         pygame.init()
 
-        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
-        pygame.display.set_caption("Meteor Dodge")
+        self.screen = pygame.display.set_mode(
+            (WIDTH, HEIGHT)
+        )
+
+        pygame.display.set_caption(
+            "Meteor Dodge"
+        )
 
         self.clock = pygame.time.Clock()
+
         self.font = pygame.font.SysFont(
             "monospace",
             26,
             bold=True
         )
+
         self.big_font = pygame.font.SysFont(
             "monospace",
             46,
@@ -41,7 +48,11 @@ class GameEngine:
         self.reset()
 
     def reset(self):
-        self.ship = Ship(WIDTH // 2, HEIGHT - 80)
+        self.ship = Ship(
+            WIDTH // 2,
+            HEIGHT - 80
+        )
+
         self.meteors = []
         self.lasers = []
 
@@ -91,6 +102,7 @@ class GameEngine:
         self.timer += 1
 
         if self.timer >= self.spawn_interval:
+
             self.meteors.append(
                 Meteor(WIDTH)
             )
@@ -103,6 +115,7 @@ class GameEngine:
             )
 
         for meteor in self.meteors:
+
             meteor.update()
 
             if meteor.collides(
@@ -136,16 +149,26 @@ class GameEngine:
                 if laser.collides(meteor):
 
                     destroyed = True
+
                     used_lasers.add(index)
 
                     self.score += 100
 
+                    fragments = meteor.split()
+
+                    remaining_meteors.extend(
+                        fragments
+                    )
+
                     break
 
-            if not destroyed and not meteor.off_screen(
-                HEIGHT
+            if (
+                not destroyed
+                and not meteor.off_screen(HEIGHT)
             ):
-                remaining_meteors.append(meteor)
+                remaining_meteors.append(
+                    meteor
+                )
 
         self.meteors = remaining_meteors
 
@@ -163,6 +186,7 @@ class GameEngine:
         self.screen.fill(BG)
 
         for sx, sy, sr in self.stars:
+
             pygame.draw.circle(
                 self.screen,
                 (200, 200, 220),
@@ -200,7 +224,8 @@ class GameEngine:
             self.screen.blit(
                 message,
                 (
-                    WIDTH // 2 - message.get_width() // 2,
+                    WIDTH // 2
+                    - message.get_width() // 2,
                     HEIGHT // 2
                 )
             )
