@@ -36,6 +36,9 @@ class GameEngine:
 
         self.shield_active = False
 
+        # Survival multiplier
+        self.survival_frames = 0
+
     def reset(self):
         self.ship = Ship(WIDTH // 2, HEIGHT - 80)
 
@@ -52,6 +55,9 @@ class GameEngine:
 
         self.shield_active = False
 
+        # Reset survival streak
+        self.survival_frames = 0
+
     def spawn_meteor(self):
         self.meteors.append(Meteor(WIDTH))
 
@@ -66,6 +72,9 @@ class GameEngine:
 
         keys = pygame.key.get_pressed()
         self.ship.move(keys, WIDTH, HEIGHT)
+
+        # Count uninterrupted survival time
+        self.survival_frames += 1
 
         # Spawn meteors
         self.spawn_timer += 1
@@ -134,7 +143,13 @@ class GameEngine:
                     destroyed = True
                     used_lasers.add(index)
 
-                    self.score += 100
+                    # Score increases according to survival multiplier
+                    multiplier = (
+                        1
+                        + self.survival_frames // (10 * FPS)
+                    )
+
+                    self.score += 100 * multiplier
 
                     fragments = meteor.split()
                     remaining_meteors.extend(fragments)
@@ -157,8 +172,15 @@ class GameEngine:
             if meteor.collides(self.ship.rect):
 
                 if self.shield_active:
+                    # Shield absorbs the collision
                     self.shield_active = False
-                    self.score += 25
+
+                    # Reset survival streak and multiplier
+                    self.survival_frames = 0
+
+                    # Remove the meteor that hit the shield
+                    meteor.y = HEIGHT + 100
+
                     continue
 
                 self.game_over = True
@@ -182,6 +204,12 @@ class GameEngine:
         # Draw ship
         self.ship.draw(self.screen)
 
+        # Calculate current multiplier
+        multiplier = (
+            1
+            + self.survival_frames // (10 * FPS)
+        )
+
         # Score
         score_text = self.font.render(
             f"Score: {self.score}",
@@ -191,6 +219,27 @@ class GameEngine:
 
         self.screen.blit(score_text, (15, 15))
 
+        # Survival time
+        time_text = self.font.render(
+            f"Time: {self.survival_frames // FPS}s",
+            True,
+            (180, 220, 255)
+        )
+
+        self.screen.blit(time_text, (15, 50))
+
+        # Multiplier
+        multiplier_text = self.font.render(
+            f"Multiplier: x{multiplier}",
+            True,
+            (255, 220, 80)
+        )
+
+        self.screen.blit(
+            multiplier_text,
+            (15, 85)
+        )
+
         # Shield status
         if self.shield_active:
             shield_text = self.font.render(
@@ -199,7 +248,10 @@ class GameEngine:
                 (120, 235, 255)
             )
 
-            self.screen.blit(shield_text, (15, 50))
+            self.screen.blit(
+                shield_text,
+                (15, 120)
+            )
 
         # Start message
         if not self.started and not self.game_over:
@@ -239,7 +291,10 @@ class GameEngine:
                 center=(WIDTH // 2, HEIGHT // 2 + 35)
             )
 
-            self.screen.blit(restart, restart_rect)
+            self.screen.blit(
+                restart,
+                restart_rect
+            )
 
         pygame.display.flip()
 
