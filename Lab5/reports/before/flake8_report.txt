@@ -1,0 +1,4 @@
+[1mtournament_scoreboard.py[m[36m:[m5[36m:[m16[36m:[m [1m[31mE203[m whitespace before ':'
+[1mtournament_scoreboard.py[m[36m:[m60[36m:[m1[36m:[m [1m[31mE302[m expected 2 blank lines, found 1
+[1mtournament_scoreboard.py[m[36m:[m79[36m:[m51[36m:[m [1m[31mE231[m missing whitespace after ','
+[1mtournament_scoreboard.py[m[36m:[m87[36m:[m43[36m:[m [1m[31mE261[m at least two spaces before inline comment
